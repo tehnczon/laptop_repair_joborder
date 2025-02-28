@@ -195,23 +195,29 @@
         <mxCell id="O95XIoRfj5FT6wjoXCb4-99" value="terms and condition" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="700" y="1541" width="120" height="23" as="geometry" />
         </mxCell>
-        <mxCell id="O95XIoRfj5FT6wjoXCb4-110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="O95XIoRfj5FT6wjoXCb4-104" target="O95XIoRfj5FT6wjoXCb4-109">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="O95XIoRfj5FT6wjoXCb4-104" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="414.5" y="1257" width="222" height="90" as="geometry" />
         </mxCell>
         <mxCell id="O95XIoRfj5FT6wjoXCb4-105" value="laptop parts/accesories fill-up form" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="414.5" y="1250" width="212" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="O95XIoRfj5FT6wjoXCb4-106" value="name/company&lt;div&gt;address&lt;/div&gt;&lt;div&gt;contact number&lt;/div&gt;&lt;div&gt;email address/optional&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="426.5" y="1287" width="200" height="53" as="geometry" />
+        <mxCell id="O95XIoRfj5FT6wjoXCb4-106" value="&lt;div&gt;laptop parts&lt;/div&gt;&lt;div&gt;accessories&lt;/div&gt;&lt;div&gt;other concern:&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="426.5" y="1287" width="123.5" height="53" as="geometry" />
         </mxCell>
         <mxCell id="O95XIoRfj5FT6wjoXCb4-111" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="O95XIoRfj5FT6wjoXCb4-109" target="O95XIoRfj5FT6wjoXCb4-96">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="O95XIoRfj5FT6wjoXCb4-109" value="portal to portable device&lt;div&gt;e.g smartphone, tabs&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;via qr or other methods&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
-          <mxGeometry x="670" y="1280" width="170" height="70" as="geometry" />
+          <mxGeometry x="675" y="1257" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="O95XIoRfj5FT6wjoXCb4-114" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="O95XIoRfj5FT6wjoXCb4-113" target="O95XIoRfj5FT6wjoXCb4-109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O95XIoRfj5FT6wjoXCb4-113" value="submit" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="1283.5" width="70" height="46.5" as="geometry" />
+        </mxCell>
+        <mxCell id="O95XIoRfj5FT6wjoXCb4-115" value="this portion is fill up by staff then after submitting it will direct to portable device like company smartphone so costumer can fill their details&amp;nbsp;&amp;nbsp;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" vertex="1" parent="1">
+          <mxGeometry x="534" y="1130" width="166" height="131.5" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
