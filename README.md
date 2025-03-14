@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # vuefrontend
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -33,3 +34,7 @@ npm run build
 ```sh
 npm run lint
 ```
+=======
+# laptop_repair_joborder
+this project is intended for creating a job order, receiving laptops listing their laptop peripherals and storing images of actual units and creating a terms and condition for legalization.
+>>>>>>> 26a8b383bf6c1f9f1bcc64305168580764edfcc2
