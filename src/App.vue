@@ -76,6 +76,15 @@
             </v-btn>
           </template>
         </v-tooltip>
+
+        <v-spacer></v-spacer>
+        <!-- Pushes the button to the right -->
+        <v-btn v-if="isAuthenticated" @click="logout" color="red" icon class="ml-auto">
+          <v-icon>mdi-logout</v-icon>
+        </v-btn>
+        <v-btn v-else href="/login.html" color="red" icon class="ml-auto">
+          <v-icon>mdi-logout</v-icon>
+        </v-btn>
       </v-app-bar>
 
       <v-main>
@@ -86,8 +95,9 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 
+// Search Bar Logic
 const search = ref('')
 const showSuggestions = ref(false)
 const suggestions = ref([
@@ -98,24 +108,34 @@ const suggestions = ref([
   'Customer Request 2',
 ])
 
-// Filter suggestions based on input
 const filteredSuggestions = computed(() =>
   search.value
     ? suggestions.value.filter((s) => s.toLowerCase().includes(search.value.toLowerCase()))
     : [],
 )
 
-// Select an item
 function selectItem(item) {
   search.value = item
   showSuggestions.value = false
 }
 
-// Hide with delay to allow clicks
 function hideWithDelay() {
   setTimeout(() => {
     showSuggestions.value = false
   }, 200)
+}
+
+// Authentication & Logout Logic
+const isAuthenticated = ref(false)
+
+onMounted(() => {
+  isAuthenticated.value = localStorage.getItem('auth') === 'true'
+})
+
+const logout = () => {
+  localStorage.removeItem('auth') // Remove authentication
+  isAuthenticated.value = false
+  window.location.href = '/login.html' // Redirect to login page
 }
 </script>
 
