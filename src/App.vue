@@ -76,6 +76,21 @@
             </v-btn>
           </template>
         </v-tooltip>
+        
+        <!-- Update Button -->
+        <v-tooltip text="Update" location="bottom">
+          <template #activator="{ props }">
+            <v-btn
+              icon
+              class="ml-15"
+              v-bind="props"
+              :color="$route.path === '/update' ? 'blue' : 'red'"
+              to="/update"
+            >
+              <v-icon>mdi-pencil</v-icon>
+            </v-btn>
+          </template>
+        </v-tooltip>
 
         <v-spacer></v-spacer>
         <!-- Pushes the button to the right -->

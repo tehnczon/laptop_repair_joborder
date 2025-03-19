@@ -13,6 +13,6 @@ export default defineConfig({
     },
   },
   server: {
-    open: '/login.html', // Automatically opens login.html when running npm run dev
+    open: '/lists', // Automatically opens login.html when running npm run dev
   },
 })
