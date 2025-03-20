@@ -16,7 +16,7 @@
     { title: 'Laptop', align: 'end', key: 'length' },
     { title: 'date', align: 'end', key: 'price', value: item => formatPrice(item.price) },
     { title: 'status', align: 'end', key: 'year' },
-    { title: 'action', align: 'end', key: 'year' },
+    { title: 'tweak', align: 'end', key: 'year' },
     
   ]
 
