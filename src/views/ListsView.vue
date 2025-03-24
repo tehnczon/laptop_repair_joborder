@@ -1,107 +1,69 @@
 <template>
   <v-data-table-virtual
     :headers="headers"
-    :items="virtualBoats"
-    height="1000 "
-    item-value="name"
+    :items="virtualJobOrders"
+    height="500"
+    item-value="jobOrderNumber"
     fixed-header
   ></v-data-table-virtual>
 </template>
+
 <script setup>
-  import { computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 
-  const headers = [
-    { title: 'job order number', align: 'start', key: 'name' },
-    { title: 'name', align: 'end ', key: 'speed' },
-    { title: 'Laptop', align: 'end', key: 'length' },
-    { title: 'date', align: 'end', key: 'price', value: item => formatPrice(item.price) },
-    { title: 'status', align: 'end', key: 'year' },
-    { title: 'tweak', align: 'end', key: 'year' },
-    
-  ]
+const headers = [
+  { title: 'Job Order Number', align: 'start', key: 'jobOrderNumber' },
+  { title: 'Laptop Model', align: 'start', key: 'laptopModel' },
+  { title: 'Date Created', align: 'start', key: 'dateCreated' },
+  { title: 'Current Status', align: 'start', key: 'status' },
+  { title: 'Parts', align: 'start', key: 'parts' },
+  { title: 'Without', align: 'start', key: 'without' } // Added 'Without' column
+]
 
-  const boats = [
-    {
-      name: 'Speedster',
-      speed: 35,
-      length: 22,
-      price: 300000,
-      year: 2021,
-    },
-    {
-      name: 'OceanMaster',
-      speed: 25,
-      length: 35,
-      price: 500000,
-      year: 2020,
-    },
-    {
-      name: 'Voyager',
-      speed: 20,
-      length: 45,
-      price: 700000,
-      year: 2019,
-    },
-    {
-      name: 'WaveRunner',
-      speed: 40,
-      length: 19,
-      price: 250000,
-      year: 2022,
-    },
-    {
-      name: 'SeaBreeze',
-      speed: 28,
-      length: 31,
-      price: 450000,
-      year: 2018,
-    },
-    {
-      name: 'HarborGuard',
-      speed: 18,
-      length: 50,
-      price: 800000,
-      year: 2017,
-    },
-    {
-      name: 'SlickFin',
-      speed: 33,
-      length: 24,
-      price: 350000,
-      year: 2021,
-    },
-    {
-      name: 'StormBreaker',
-      speed: 22,
-      length: 38,
-      price: 600000,
-      year: 2020,
-    },
-    {
-      name: 'WindSail',
-      speed: 15,
-      length: 55,
-      price: 900000,
-      year: 2019,
-    },
-    {
-      name: 'FastTide',
-      speed: 37,
-      length: 20,
-      price: 280000,
-      year: 2022,
-    },
-  ]
+const jobOrders = [
+  { jobOrderNumber: 'JO12345', laptopModel: 'Dell XPS 13', dateCreated: '2023-03-01', status: 'Under Repair', 
+    parts: ['2x16GB RAM', '256GB SSD', '500GB HDD', 'Battery', 'Charger', 'Bag'], 
+    without: ['Screws'] },
+  
+  { jobOrderNumber: 'JO12346', laptopModel: 'MacBook Pro 16', dateCreated: '2023-03-05', status: 'Completed', 
+    parts: ['16GB RAM', '512GB SSD', '250GB HDD', 'Battery', 'Charger'], 
+    without: ['Screws', 'Power Cable'] },
 
-  const virtualBoats = computed(() => {
-    return [...Array(10000).keys()].map(i => {
-      const boat = { ...boats[i % 10] }
-      boat.name = `${boat.name} #${i}`
-      return boat
+  { jobOrderNumber: 'JO12347', laptopModel: 'HP Spectre x360', dateCreated: '2023-03-10', status: 'In Progress', 
+    parts: ['8GB RAM', '1TB SSD', '1TB HDD', 'Battery', 'Charger'], 
+    without: ['Screws'] },
+
+  { jobOrderNumber: 'JO12348', laptopModel: 'Lenovo ThinkPad X1', dateCreated: '2023-03-12', status: 'Under Repair', 
+    parts: ['16GB RAM', '256GB SSD', '500GB HDD', 'Battery', 'Charger', 'Bag'], 
+    without: ['Screws'] }
+]
+
+const virtualJobOrders = ref([])
+
+onMounted(() => {
+  fetchData()
+})
+
+function fetchData() {
+  // Simulate fetching data (e.g., from an API)
+  setTimeout(() => {
+    virtualJobOrders.value = [...Array(500).keys()].map(i => {
+      const jobOrder = { ...jobOrders[i % jobOrders.length] }
+      jobOrder.jobOrderNumber = `${jobOrder.jobOrderNumber} #${i}` // Unique job order for each
+      return jobOrder
     })
-  })
+  }, 1000)
+}
 
-  function formatPrice (value) {
-    return `$${value.toFixed(0).replace(/\d(?=(\d{3})+$)/g, '$&,')}`
-  }
+const formattedJobOrders = computed(() => virtualJobOrders.value)
+
 </script>
+
+<style scoped>
+form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+</style>
